@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FilmesApi</name>
+    </assembly>
+    <members>
+        <member name="M:FilmesApi.Controllers.FilmeController.AdicionaFilme(FilmesApi.Data.DTOs.CreateFilmeDto)">
+            <summary>
+            Adiciona um filme ao banco de dados
+            </summary>
+            <param name="filmeDto">Objeto com os campos necessários para criação de um filme</param>
+            <returns>IActionResult</returns>
+            <response code="201">Caso inserção seja feita com sucesso</response>
+        </member>
+        <member name="M:FilmesApi.Controllers.FilmeController.LeFilmes(System.Int32,System.Int32)">
+            <summary>
+            Busca todos os filmes no banco de dados com uma páginação de 50
+            </summary>
+            <param name="skip">Início de onde deverá partir a páginação</param>
+            <param name="take">Quantos itens a página irá exibir</param>
+            <returns>IEnumerable de filmes</returns>
+        </member>
+        <member name="M:FilmesApi.Controllers.FilmeController.LeFilmePorId(System.Int32)">
+            <summary>
+            Busca apenas um filme através do seu ID
+            </summary>
+            <param name="id">ID do filme que será buscado na lista</param>
+            <returns>IActionResult</returns>
+            <response code="200">Caso seja encontrado um filme com o ID passado via parâmetro</response>
+        </member>
+        <member name="M:FilmesApi.Controllers.FilmeController.AtualizaFilme(System.Int32,FilmesApi.Data.DTOs.UpdateFilmeDto)">
+            <summary>
+            Atualiza um filme encontrado pelo ID através do corpo passado
+            </summary>
+            <param name="id">ID do filme que será buscado para atualização</param>
+            <param name="filmeDto">Corpo da requisição</param>
+            <returns>IActionResult</returns>
+            <response code="204">Quando a atualização do filme for feita com sucesso</response>
+        </member>
+        <member name="M:FilmesApi.Controllers.FilmeController.AtualizaFilmeParcial(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{FilmesApi.Data.DTOs.UpdateFilmeDto})">
+            <summary>
+            Atualiza um filme de forma parcial, não precisando digitar toda sua estrutura
+            </summary>
+            <param name="id">ID do filme que será buscado para atualização</param>
+            <param name="patch">JSON que será passado demonstrando quais campos serão atualizados através do patch</param>
+            <returns>IActionResult</returns>
+            <response code="204">Quando a atualização do filme for feita com sucesso</response>
+        </member>
+        <member name="M:FilmesApi.Controllers.FilmeController.DeletaFilme(System.Int32)">
+            <summary>
+            Faz a deleção de um filme do banco de dados através do seu ID
+            </summary>
+            <param name="id">ID do filme que será deletado</param>
+            <returns>IActionResult</returns>
+            <response code="204">Quando a deleção do filme for feita com sucesso</response>
+        </member>
+        <member name="T:FilmesApi.Migrations.CriandoTabelaDeFilme">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmesApi.Migrations.CriandoTabelaDeFilme.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmesApi.Migrations.CriandoTabelaDeFilme.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FilmesApi.Migrations.CriandoTabelaDeFilme.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
